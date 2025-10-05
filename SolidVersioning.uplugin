@@ -18,6 +18,11 @@
 			"Name": "SolidVersioning",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "SolidVersioningTests",
+			"Type": "UncookedOnly",
+			"LoadingPhase": "PostDefault"
 		}
 	],
 	"Plugins": [

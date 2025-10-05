@@ -47,7 +47,7 @@ namespace Solid
 		{
 			int32 ToVersion;
 			FStepFunctionType StepFunction;
-		};
+		}; // struct FAssetMigrationStep
 
 		static FAssetMigrationRegistry& Get()
 		{
@@ -55,7 +55,7 @@ namespace Solid
 			return GAssetMigrationRegistry;
 		}
 
-		void Register(const TSolidNotNull<UClass*> ForClass, int32 ToVersion, FStepFunctionType Func)
+		void Register(const TSolidNotNull<UClass*> ForClass, const int32 ToVersion, FStepFunctionType Func)
 		{
 			TArray<FAssetMigrationStep>& Array = Steps.FindOrAdd(ForClass);
 			Array.Add({ ToVersion, MoveTemp(Func) });
@@ -111,6 +111,6 @@ namespace Solid
 			} \
 		}; \
 		static FAutoRegister##ClassType##ToVersion AutoRegister##ClassType##ToVersionInstance; \
-	}
+	} 
 
 #undef UE_API // SOLIDVERSIONING_API
