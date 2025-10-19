@@ -2,10 +2,12 @@
 
 #include "SolidVersioningTypes.h"
 
+#include "Logging/StructuredLog.h"
+
 bool Solid::FPropertyMatchesCDO(const TSolidNotNull<const UObject*> Object,
-	const TSolidNotNull<const FProperty*> Property)
+                                const TSolidNotNull<const FProperty*> Property)
 {
-	check(Object->GetClass()->IsChildOf(Property->GetOwnerClass()));
+	solid_check(Object->GetClass()->IsChildOf(Property->GetOwnerClass()));
 		
 	const void* ObjectValuePtr = Property->ContainerPtrToValuePtr<void>(Object);
 	const void* CDOValuePtr = Property->ContainerPtrToValuePtr<void>(Object->GetClass()->GetDefaultObject());

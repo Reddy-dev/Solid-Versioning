@@ -6,8 +6,8 @@
 #include <functional>
 
 #include "SolidMacros.h"
-#include "Standard/robin_hood.h"
 #include "Types/SolidNotNull.h"
+#include "Standard/robin_hood.h"
 
 #define UE_API SOLIDVERSIONING_API
 
@@ -26,7 +26,7 @@
 
 #define END_SOLID_VERSION(Name) \
 			\
-			/** -----<new versions can be added above this line>----- **/ \
+			/* -----<new versions can be added above this line>----- */ \
 			VersionPlusOne, \
 			LatestVersion = VersionPlusOne - 1 \
 		}; \
